@@ -684,9 +684,25 @@ export default function OptionFinal() {
   const [gameOpen, setGameOpen] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [activeSection, setActiveSection] = useState("hero");
+  const [scrollLocked, setScrollLocked] = useState(true);
   const { scrollYProgress } = useScroll();
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
   const glowOpacity = useTransform(scrollYProgress, [0, 0.1], [0.08, 0.04]);
+
+  // Lock scroll until hero animations complete
+  useEffect(() => {
+    // Prevent scrolling
+    document.body.style.overflow = "hidden";
+    // Unlock after all hero animations finish (buttons appear at 3.2s + buffer)
+    const timeout = setTimeout(() => {
+      setScrollLocked(false);
+      document.body.style.overflow = "";
+    }, 3800);
+    return () => {
+      clearTimeout(timeout);
+      document.body.style.overflow = "";
+    };
+  }, []);
 
   // Auto-open/close panel based on scroll position
   // With the larger spacer, trigger later and close earlier for smooth feel

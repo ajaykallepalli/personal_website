@@ -1,0 +1,88 @@
+{
+  "name": "Ajay Kallepalli",
+  "email": "ajay.r.kallepalli@gmail.com",
+  "linkedin": "linkedin.com/in/ajaykallepalli/",
+  "phone": "(424) 354-7363",
+  "location": "San Francisco, CA",
+  "education": [
+    {
+      "school": "University of San Francisco (USF)",
+      "location": "San Francisco, CA",
+      "degree": "M.S. in Data Science, Data Engineering Concentration",
+      "gpa": "3.95/4.0",
+      "date": "Expected Dec 2025"
+    },
+    {
+      "school": "University of California, Los Angeles (UCLA)",
+      "location": "Los Angeles, CA",
+      "degree": "B.S. Statistics; B.A. in Economics",
+      "date": "Sep 2017 - Jun 2021"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Senior Software Engineer, AI",
+      "company": "PwC",
+      "location": "San Francisco, CA",
+      "date": "Aug 2025 - Present",
+      "bullets": [
+        "Architected and shipped a Python-based microservices platform powering an internal AI-enabled opportunity tracking system used by firm leadership, integrating Salesforce and enterprise data sources to unify $50M+ in active commercial pipeline visibility.",
+        "Designed and implemented a document ingestion, indexing, and semantic search pipeline to support an internal AI assistant, enabling leadership to retrieve context-aware insights across proposals, client records, and knowledge assets.",
+        "Proposed and prototyped a Deep Research Agent that autonomously synthesizes client intelligence from internal and external sources, accelerating partner preparation workflows and expanding opportunity scope.",
+        "Owned database migrations, CI/CD automation, and containerized deployments across multiple services, improving release velocity and reliability in a pre-launch, multi-team environment.",
+        "Delivered full-stack features using TypeScript frontend components aligned with Figma-driven design systems, ensuring consistent UX across analytics dashboards and AI workflows."
+      ]
+    },
+    {
+      "title": "Software Engineer, Agentic AI",
+      "company": "Honeywell",
+      "location": "Atlanta, GA",
+      "date": "Jun 2025 - Sep 2025",
+      "note": "Master's Intern",
+      "bullets": [
+        "Delivered a LangGraph-orchestrated chatbot that enabled Databricks users to query data and launch SQL, GraphRAG, and visualization agents with natural language.",
+        "Containerized services with Docker and deployed to Azure Kubernetes Service (AKS); used GitHub Actions and Octopus Deploy for end-to-end CI/CD pipelines to enable zero-downtime blue-green releases."
+      ]
+    },
+    {
+      "title": "Software Engineer, AI/ML",
+      "company": "ArangoDB",
+      "location": "San Francisco, CA",
+      "date": "Oct 2024 - Jun 2025",
+      "note": "Part-Time",
+      "bullets": [
+        "Architected an open-source GraphRAG solution (FastAPI, Docker/K8s, LangChain, vLLM, ArangoDB) that boosted answer accuracy from 50% to 90% through knowledge-graph semantic search and graph traversals.",
+        "Reinforcement finetuned an LLM Copilot using PyTorch, improving Arango Query Language generation accuracy by 50% and enabling natural-language graph querying for ArangoDB customers.",
+        "Expanded and productionized the langchain-arangodb Python package—added hybrid search, grew PyTest coverage 10% to 90%, automated CI/CD with GitHub Actions, and published docs that drove adoption by NVIDIA's Video Search & Summarization team."
+      ]
+    },
+    {
+      "title": "Machine Learning Engineer, Support",
+      "company": "Qualcomm",
+      "location": "San Diego, CA",
+      "date": "Dec 2021 - Jun 2024",
+      "bullets": [
+        "Built from scratch end-to-end computer vision data pipelines leveraging Python, AWS (S3, IAM), and Bash, orchestrating secure and scalable handling of petabyte-scale data for facial modeling and synthetic avatar generation.",
+        "Achieved a 16x speedup in CV data processing by parallelizing processing tasks (Color Correction, Normal Map Generation, Mesh Generation etc.) using multiprocessing and distributed computing strategies.",
+        "Designed and implemented a custom image processing pipeline for facial avatar reconstruction using RealityCapture, OpenCV, NumPy, and RawTherapee across an 87-camera photogrammetry rig, eliminating $35,000 in third-party consulting costs.",
+        "Trained and led a remote annotation team, developing modular video tutorials and automating Quality Control protocols using Python scripts, ultimately resulting in 4000 hours saved for engineering staff."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Scalable ML Restaurant Recommendation & Analytics Platform",
+      "tech": "MongoDB, Airflow, Google Cloud Storage, BigQuery, PySpark, Google Looker Studio",
+      "bullets": [
+        "Developed a personalized restaurant recommendation engine leveraging collaborative filtering and sentiment-aware ranking to suggest optimal dining options based on user preferences and review patterns.",
+        "Built a scalable Airflow pipeline to ingest Michelin guides and Google reviews from the Google Restaurants API into Google Cloud and MongoDB Atlas.",
+        "Created an interactive dashboard integrating Google ratings, Sentiment Analysis, Trends, and Michelin data."
+      ]
+    }
+  ],
+  "skills": {
+    "languages": ["Python", "R", "SQL", "JavaScript", "PowerShell", "Bash", "Matlab", "TypeScript"],
+    "frameworks": ["PyTorch/TensorFlow", "Git", "Docker", "Kubernetes", "AWS", "Apache (Hadoop, Spark, Kafka)", "Selenium"],
+    "libraries": ["NumPy", "Pandas", "scikit-learn", "Hugging Face Transformers", "LangChain", "LlamaIndex", "MLFlow", "OpenCV"]
+  }
+}

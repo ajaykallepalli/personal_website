@@ -196,10 +196,10 @@ function NavDot({ label, active, onClick }: { label: string; active: boolean; on
 // DATA
 // ═══════════════════════════════════════════
 const EXPERIENCE = [
-  { company: "PwC", role: "Senior Software Engineer, AI", period: "Aug 2025–Now", items: ["AI opportunity tracking for firm leadership", "Semantic search across knowledge assets", "Deep Research Agent for client intelligence", "$50M+ pipeline visibility", "Full-stack TypeScript with Figma design systems"] },
-  { company: "Honeywell", role: "Software Engineer, Agentic AI", period: "Jun–Sep 2025", items: ["LangGraph chatbot with SQL, GraphRAG & viz agents", "AKS deployment with zero-downtime blue-green releases"] },
-  { company: "ArangoDB", role: "Software Engineer, AI/ML", period: "Oct 2024–Jun 2025", items: ["GraphRAG: 50% → 90% answer accuracy", "RL-finetuned LLM for graph queries", "langchain-arangodb adopted by NVIDIA"] },
-  { company: "Qualcomm", role: "ML Engineer", period: "Dec 2021–Jun 2024", items: ["Petabyte-scale CV pipelines for facial modeling", "16x speedup via distributed computing", "87-camera photogrammetry ($35K savings)", "4000 hours saved through QC automation"] },
+  { company: "PwC", role: "Senior Software Engineer, AI", period: "Aug 2025–Now", summary: "Building an AI-powered platform for firm leadership — semantic search, deep research agents, and $50M+ pipeline visibility across enterprise data.", items: ["AI opportunity tracking for firm leadership", "Semantic search across knowledge assets", "Deep Research Agent for client intelligence", "$50M+ pipeline visibility", "Full-stack TypeScript with Figma design systems"] },
+  { company: "Honeywell", role: "Software Engineer, Agentic AI", period: "Jun–Sep 2025", summary: "Shipped a LangGraph-orchestrated chatbot letting Databricks users query data via natural language with SQL, GraphRAG, and visualization agents.", items: ["LangGraph chatbot with SQL, GraphRAG & viz agents", "AKS deployment with zero-downtime blue-green releases"] },
+  { company: "ArangoDB", role: "Software Engineer, AI/ML", period: "Oct 2024–Jun 2025", summary: "Built an open-source GraphRAG solution that boosted answer accuracy from 50% to 90%, and an RL-finetuned LLM copilot adopted by NVIDIA.", items: ["GraphRAG: 50% → 90% answer accuracy", "RL-finetuned LLM for graph queries", "langchain-arangodb adopted by NVIDIA"] },
+  { company: "Qualcomm", role: "ML Engineer", period: "Dec 2021–Jun 2024", summary: "Engineered petabyte-scale computer vision pipelines for facial modeling — achieved 16x speedup and built an 87-camera photogrammetry rig from scratch.", items: ["Petabyte-scale CV pipelines for facial modeling", "16x speedup via distributed computing", "87-camera photogrammetry ($35K savings)", "4000 hours saved through QC automation"] },
 ];
 const SKILLS = ["Python", "TypeScript", "PyTorch", "LangChain", "Docker", "K8s", "AWS", "React", "GraphRAG", "FastAPI", "vLLM", "Spark"];
 const LIKES = ["Building things that think", "Graph databases", "Long walks in SF", "Distributed systems", "Good coffee", "Open source", "Teaching", "Pixel art", "Quiet mornings"];
@@ -235,17 +235,38 @@ function InfoPanel({ open, onClose }: { open: boolean; onClose: () => void }) {
                 <div className="w-10 h-0.5 bg-white/10 rounded-full" />
               </div>
 
-              <p className="font-mono text-amber-400/30 text-xs mb-1">$ man ajay</p>
-              <h2 className="font-mono text-white/80 text-lg mb-6 font-medium">Information</h2>
+              {/* Man page header */}
+              <div className="flex justify-between items-center mb-6">
+                <span className="font-mono text-xs text-white/30">AJAY(1)</span>
+                <span className="font-mono text-xs text-white/30">User Manual</span>
+                <span className="font-mono text-xs text-white/30">AJAY(1)</span>
+              </div>
 
-              <p className="text-sm text-white/40 leading-relaxed mb-10 max-w-lg font-mono">
+              {/* NAME */}
+              <p className="font-mono text-xs text-white/20 tracking-[0.3em] mb-2">NAME</p>
+              <p className="font-mono text-sm text-white/50 pl-6 mb-6">
+                <span className="text-white/75">ajay</span> — senior software engineer, AI
+              </p>
+
+              {/* SYNOPSIS */}
+              <p className="font-mono text-xs text-white/20 tracking-[0.3em] mb-2">SYNOPSIS</p>
+              <p className="font-mono text-sm text-white/50 pl-6 mb-6">
+                <span className="text-white/75">ajay</span>{" "}
+                <span className="text-amber-400/40">[--ml-pipelines]</span>{" "}
+                <span className="text-amber-400/40">[--distributed-systems]</span>{" "}
+                <span className="text-amber-400/40">[--open-source]</span>
+              </p>
+
+              {/* DESCRIPTION */}
+              <p className="font-mono text-xs text-white/20 tracking-[0.3em] mb-2">DESCRIPTION</p>
+              <p className="text-sm text-white/40 leading-relaxed mb-8 pl-6 max-w-lg font-mono">
                 A career building <span className="text-white/65">intelligent systems</span>,{" "}
                 <span className="text-white/65">scaling ML pipelines</span>, and{" "}
                 <span className="text-white/65">pushing AI boundaries</span>.
                 Guided by open source, distributed systems, and making tools that feel effortless.
               </p>
 
-              {/* Experience */}
+              {/* EXPERIENCE */}
               <p className="font-mono text-xs text-white/20 tracking-[0.3em] mb-4">EXPERIENCE</p>
               {EXPERIENCE.map((exp, i) => (
                 <div key={exp.company}>
@@ -312,41 +333,48 @@ function InfoPanel({ open, onClose }: { open: boolean; onClose: () => void }) {
                 </p>
               </div>
 
-              {/* Likes / Dislikes */}
+              {/* OPTIONS */}
               <div className="grid grid-cols-2 gap-8 mb-8">
                 <div>
-                  <p className="font-mono text-xs text-white/20 tracking-[0.3em] mb-3">WHAT I LIKE</p>
+                  <p className="font-mono text-xs text-white/20 tracking-[0.3em] mb-3">LIKES</p>
                   {LIKES.map((l) => (
                     <p key={l} className="font-mono text-sm text-white/30 py-0.5 hover:text-white/55 transition-colors cursor-default">
-                      {l}
+                      <span className="text-amber-400/30">+</span> {l}
                     </p>
                   ))}
                 </div>
                 <div>
-                  <p className="font-mono text-xs text-[#e5654b]/30 tracking-[0.3em] mb-3">WHAT I DON&apos;T</p>
+                  <p className="font-mono text-xs text-[#e5654b]/30 tracking-[0.3em] mb-3">DISLIKES</p>
                   {DISLIKES.map((d) => (
                     <p key={d} className="font-mono text-sm text-white/20 py-0.5 hover:text-[#e5654b]/40 transition-colors cursor-default">
-                      {d}
+                      <span className="text-[#e5654b]/20">−</span> {d}
                     </p>
                   ))}
                 </div>
               </div>
 
-              {/* Resume PDF + Close */}
-              <div className="border-t border-white/5 pt-4 flex justify-between items-center">
+              {/* SEE ALSO / FILES */}
+              <div className="border-t border-white/5 pt-4 mb-4">
+                <p className="font-mono text-xs text-white/20 tracking-[0.3em] mb-2">FILES</p>
                 <motion.a
                   href="/resume.pdf"
-                  className="font-mono text-xs text-[#e5654b]/50 hover:text-[#e5654b] transition-colors"
+                  className="font-mono text-xs text-[#e5654b]/50 hover:text-[#e5654b] transition-colors pl-6"
                   whileHover={{ x: 4 }}
                 >
-                  Download resume (PDF) →
+                  /usr/local/share/ajay/resume.pdf →
                 </motion.a>
+              </div>
+
+              {/* Man page footer + Close */}
+              <div className="border-t border-white/5 pt-4 flex justify-between items-center">
+                <span className="font-mono text-xs text-white/15">San Francisco</span>
+                <span className="font-mono text-xs text-white/15">February 2026</span>
                 <motion.button
                   className="font-mono text-xs text-white/20 border border-white/8 px-4 py-2 hover:border-white/20 hover:text-white/40 cursor-pointer transition-all"
                   onClick={onClose}
                   whileHover={{ y: -1 }}
                 >
-                  Close
+                  :q
                 </motion.button>
               </div>
             </div>
@@ -681,6 +709,7 @@ function PlatformerGame({ onExit }: { onExit: () => void }) {
 export default function OptionFinal() {
   const [infoPanelOpen, setInfoPanelOpen] = useState(false);
   const [infoPanelManual, setInfoPanelManual] = useState(false); // user manually closed
+  const [expandedExp, setExpandedExp] = useState<string | null>(null);
   const [gameOpen, setGameOpen] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [activeSection, setActiveSection] = useState("hero");
@@ -864,25 +893,42 @@ export default function OptionFinal() {
 
         <div className="space-y-1">
           {EXPERIENCE.map((exp, i) => (
-            <motion.div
-              key={exp.company}
-              className="flex justify-between items-center py-3 border-b border-amber-400/8 cursor-pointer group"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ x: 4 }}
-              onClick={() => { setInfoPanelOpen(true); setInfoPanelManual(false); }}
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-amber-400/15 group-hover:bg-[#e5654b] transition-colors" />
-                <span className="font-mono text-sm text-amber-400/60 group-hover:text-amber-400 transition-colors">
-                  {exp.company}
-                </span>
-                <span className="font-mono text-xs text-amber-400/20 hidden sm:inline">{exp.role}</span>
-              </div>
-              <span className="font-mono text-xs text-amber-400/15">{exp.period}</span>
-            </motion.div>
+            <div key={exp.company}>
+              <motion.div
+                className="flex justify-between items-center py-3 border-b border-amber-400/8 cursor-pointer group"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ x: 4 }}
+                onClick={() => setExpandedExp(expandedExp === exp.company ? null : exp.company)}
+              >
+                <div className="flex items-center gap-3">
+                  <motion.div
+                    className="w-1.5 h-1.5 rounded-full transition-colors"
+                    animate={{ backgroundColor: expandedExp === exp.company ? "#e5654b" : "rgba(217,160,32,0.15)" }}
+                  />
+                  <span className={`font-mono text-sm transition-colors ${expandedExp === exp.company ? "text-amber-400" : "text-amber-400/60 group-hover:text-amber-400"}`}>
+                    {exp.company}
+                  </span>
+                  <span className="font-mono text-xs text-amber-400/20 hidden sm:inline">{exp.role}</span>
+                </div>
+                <span className="font-mono text-xs text-amber-400/15">{exp.period}</span>
+              </motion.div>
+              <AnimatePresence>
+                {expandedExp === exp.company && (
+                  <motion.p
+                    className="font-mono text-xs text-amber-400/35 leading-relaxed pl-6 py-3 border-b border-amber-400/5"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    {exp.summary}
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </div>
           ))}
         </div>
 
